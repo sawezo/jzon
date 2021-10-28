@@ -72,19 +72,7 @@ pd.json_normalize(data) # people/animals still compacted
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -134,19 +122,7 @@ display(table_tag2df["root_0<animals_1"]) # an example
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -373,10 +349,10 @@ pd.DataFrame(data)
 
 
 Each merged table is associated with a compound tag of a specific format:
-- the ```<``` delimiter separates a parent (left) from a child (right) table where the right table is a subarray under the parent table (```{a:[{b:c}]}``` $\rightarrow$ ```a<b```)
+- the ```<``` delimiter separates a parent (left) from a child (right) table where the right table is a subarray under the parent table (```{a:[{b:c}]}``` -> ```a<b```)
     - to track what index of the array the row is respective to, there is a corresponding ```subarray_IDX``` feature
     - the ```FK``` of the child table on the right of a ```<``` maps to the PK of the table on the left of a ```<``` (the parent table)
 - the items inbetween the ```<``` delimiters give lower-level table details
     - the left of a ```_``` is the 'overall feature' the table describes, being the key in the original object that maps to the subarray of information the table represents 
     - the right is the subarray 'level'
-- a ```.``` in a column name indicates that the feature was found in a nested object (```{a:{b:c}}``` $\rightarrow$ ```a.b=c```)
+- a ```.``` in a column name indicates that the feature was found in a nested object (```{a:{b:c}}``` -> ```a.b=c```)
