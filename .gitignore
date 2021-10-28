@@ -1,6 +1,7 @@
 pythoncodeblocks.tpl
 README.ipynb
 dev/
+banner.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
